@@ -1,0 +1,6 @@
+#cloud-config
+passwd:
+  users:
+    - name: test
+      password_hash: "$1$SOazgBg5$IYQHxJHUioicGFFE2I.38Pkjhj/"
+      groups: [ sudo, docker ]
