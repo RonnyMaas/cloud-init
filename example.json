@@ -1,0 +1,22 @@
+{
+  "ignition": {
+    "config": {},
+    "timeouts": {},
+    "version": "2.1.0"
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "sudo",
+          "docker"
+        ],
+        "name": "test",
+        "passwordHash": "$1$SOazgBg5$IYQHxJHUioicGFFE2I.38Pkjhj/"
+      }
+    ]
+  },
+  "storage": {},
+  "systemd": {}
+}
