@@ -21,7 +21,7 @@
           "source": "data:,%23!%2Fbin%2Fsh%0AVERSION%3D2.7.13.2714%0APACKAGE%3DActivePython-%24%7BVERSION%7D-linux-x86_64-glibc-2.12-402178%0Amkdir%20-p%20%2Fopt%2Fbin%0Acd%20%2Fopt%0Awget%20http%3A%2F%2Fdownloads.activestate.com%2FActivePython%2Freleases%2F%24%7BVERSION%7D%2F%24%7BPACKAGE%7D.tar.gz%0Atar%20-xzvf%20%24%7BPACKAGE%7D.tar.gz%0Amv%20%24%7BPACKAGE%7D%20apy%20%26%26%20cd%20apy%20%26%26%20.%2Finstall.sh%20-I%20%2Fopt%2Fpython%2F%0Aln%20-sf%20%2Fopt%2Fpython%2Fbin%2Feasy_install%20%2Fopt%2Fbin%2Feasy_install%0Aln%20-sf%20%2Fopt%2Fpython%2Fbin%2Fpip%20%2Fopt%2Fbin%2Fpip%0Aln%20-sf%20%2Fopt%2Fpython%2Fbin%2Fpython%20%2Fopt%2Fbin%2Fpython%0Aln%20-sf%20%2Fopt%2Fpython%2Fbin%2Fpython%20%2Fopt%2Fbin%2Fpython2%0Aln%20-sf%20%2Fopt%2Fpython%2Fbin%2Fvirtualenv%20%2Fopt%2Fbin%2Fvirtualenv%0A%2Fusr%2Fbin%2Frm%20-f%20%2Fopt%2F%24%7BPACKAGE%7D.tar.gz%0A",
           "verification": {}
         },
-        "mode": 750
+        "mode": 488
       }
     ]
   },
