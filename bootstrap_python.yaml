@@ -1,0 +1,41 @@
+storage:
+  files:
+    - path: /root/bootstrap-python.sh
+      filesystem: root
+      contents: 
+        inline: |
+          #!/bin/sh
+          VERSION=2.7.13.2714
+          PACKAGE=ActivePython-${VERSION}-linux-x86_64-glibc-2.12-402178
+          mkdir -p /opt/bin
+          cd /opt
+          wget http://downloads.activestate.com/ActivePython/releases/${VERSION}/${PACKAGE}.tar.gz
+          tar -xzvf ${PACKAGE}.tar.gz
+          mv ${PACKAGE} apy && cd apy && ./install.sh -I /opt/python/
+          ln -sf /opt/python/bin/easy_install /opt/bin/easy_install
+          ln -sf /opt/python/bin/pip /opt/bin/pip
+          ln -sf /opt/python/bin/python /opt/bin/python
+          ln -sf /opt/python/bin/python /opt/bin/python2
+          ln -sf /opt/python/bin/virtualenv /opt/bin/virtualenv
+          /usr/bin/rm -f /opt/${PACKAGE}.tar.gz
+      user:
+        id: 0
+      group:
+        id: 0
+      mode: 750
+systemd:
+  units:
+    - name: bootstrap-python.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Bootstrap Python
+        After=network.service systemd-networkd.service network-online.target
+        [Service]
+
+        ExecStart=/usr/bin/sh -c '/root/bootstrap-python.sh'
+
+        Type=oneshot
+
+        [Install]
+        WantedBy=multi-user.target

@@ -1,0 +1,30 @@
+{
+  "ignition": {
+    "config": {},
+    "timeouts": {},
+    "version": "2.1.0"
+  },
+  "networkd": {},
+  "passwd": {},
+  "storage": {
+    "filesystems": [
+      {
+        "mount": {
+          "device": "/dev/vdb",
+          "format": "xfs",
+          "label": "MNT_DATA"
+        },
+        "name": "mnt_data"
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Mount]\nWhat=/dev/vdb\nWhere=/mnt/data\nType=xfs\n\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "mnt-data.mount"
+      }
+    ]
+  }
+}

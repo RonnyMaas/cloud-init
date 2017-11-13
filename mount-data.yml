@@ -1,0 +1,19 @@
+storage:
+  filesystems:
+    - name: mnt_data
+      mount:
+        device: /dev/vdb
+        format: xfs
+        label: MNT_DATA
+systemd:
+  units:
+    - name: mnt-data.mount
+      enabled: true
+      contents: |
+        [Mount]
+        What=/dev/vdb
+        Where=/mnt/data
+        Type=xfs
+
+        [Install]
+        WantedBy=multi-user.target
